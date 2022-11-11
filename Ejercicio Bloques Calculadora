@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdio_ext.h>
+
+float calculadora(int valorA, int valorB, char op);
+void bucle_usar (int valorA, int valorB, char op, char usar);
+
+int main(){
+  int valorA;
+  int valorB;
+  char op;
+  char usar = '0';
+  bucle_usar(valorA, valorB, op, usar);
+}
+
+void bucle_usar (int valorA, int valorB, char op, char usar){
+   do{
+    printf("Primer valor\n >>> ");
+    scanf("%d", &valorA);
+    printf("Segundo valor\n >>> ");
+    scanf("%d", &valorB);
+    printf("Operacion\n >>> ");
+    __fpurge(stdin);
+    scanf("%c", &op);
+    calculadora(valorA, valorB, op);
+    printf("Si quiere salir del programa aprete 1, si quiere seguir calculando presione 0 \n >>> ");
+    __fpurge(stdin);
+    scanf("%c", &usar);
+    }
+    while(usar == '0');
+  printf("Gracias por utilizar el programa");
+}
+float calculadora(int valorA, int valorB, char op){
+  float resultado;
+  switch (op){
+    case '+':
+              resultado = valorA + valorB;
+              break;
+    case '-':
+              resultado = valorA - valorB;
+              break;
+    case '*':
+              resultado = valorA * valorB;
+              break;
+    case '/':
+              resultado = valorA / valorB;
+              break;
+  }
+  printf("%f\n", resultado);
+  }
