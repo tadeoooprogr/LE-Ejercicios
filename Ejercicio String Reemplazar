@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdio_ext.h>
+
+void reemplazar(char texto[200], char caract);
+
+int main(void) {
+  char texto[200];
+  char caract;
+  printf("Introduzca una palabra\n");
+  scanf("%s", texto);
+  printf("Introduzca un caracter para reemplazarlo dentro del texto\n");
+  __fpurge(stdin);
+  scanf("%c", &caract);
+  reemplazar(texto, caract);
+}
+
+void reemplazar (char texto[200], char caract){
+  int s=0; 
+  for (s=0; s<200; s++){
+    if (caract==texto[s]){
+      texto[s]='!';
+      }
+    }
+  printf("%s",texto);
+}
