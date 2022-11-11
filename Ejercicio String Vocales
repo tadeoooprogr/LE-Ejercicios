@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdio_ext.h>
+
+void vocales (char texto[]);
+
+int main(void) {
+  char texto[100];
+  printf("Introduzca una palabra\n");
+  scanf("%s", texto);
+  vocales(texto);
+}
+
+void vocales (char texto[]){  
+  char a = 0;
+  char e = 0;
+  char i = 0;
+  char o = 0;
+  char u = 0;
+  char s = 0;
+    while (s<20){
+    if (texto[s] == 'A' || texto[s] == 'a'){
+      a++;
+      s++;
+      }else if(texto[s] == 'E' || texto[s] == 'e'){
+      e++;
+      s++;
+      }else if(texto[s] == 'I' || texto[s] == 'i'){
+      i++;
+      s++;
+      }else if(texto[s] == 'O' || texto[s] == 'o'){
+      o++;
+      s++;
+      }else if(texto[s] == 'U' || texto[s] == 'u'){
+      u++;
+      s++;
+      }else s++;
+    }
+  printf("\n%s tiene %d A\n\n", texto, a);
+  printf("%s tiene %d E\n\n", texto, e);
+  printf("%s tiene %d I\n\n", texto, i);
+  printf("%s tiene %d O\n\n", texto, o);
+  printf("%s tiene %d U\n\n", texto, u);
+}
