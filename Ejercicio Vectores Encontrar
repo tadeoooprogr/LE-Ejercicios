@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdio_ext.h>
+
+int buscanumeros(char I, int numeros_v[I]);
+
+int main(void) {
+  int I;
+  int numeros_v[I];
+  int valor;
+  char sen=0;
+  printf("Por favor, introduzca de cuántos valores podrá guardar el vector\n");
+  scanf("%d", &I);
+  __fpurge(stdin);
+  printf("Ahora introduzca los valores que desea guardar\n");
+  for (sen=0; sen<I; sen++){
+    scanf("%d", &numeros_v[sen]);
+    __fpurge(stdin);
+  }
+  buscanumeros(I, numeros_v);
+}
+
+int buscanumeros(char I, int numeros_v[I]){
+  int valorbuscar;
+  char sen2=0;
+  char encontrado = 0;
+  printf("Introduzca el valor que desea buscar: \n");
+  scanf("%d", &valorbuscar);
+  for (sen2=0; sen2<I; sen2++){
+    if (valorbuscar == numeros_v[sen2]){
+      encontrado = 1;
+      printf("El valor %d coincide con el valor en la posicion %d del vector \n", valorbuscar, sen2);
+    }
+    if ((valorbuscar != numeros_v[sen2]) && (sen2+1==I) && (encontrado==0)){
+      printf("El valor ingresado no se encuentra en ninguna de ninguna de las posiciones: -1");
+    }
+  }
+}
