@@ -12,23 +12,23 @@ int main () {
   printf("Cuánto piensa usted que es en ascii \n"); 
   scanf("%d", &valor); 
   comparador(letra, valor); 
-    } 
+} 
  
  void comparador (char letra, int valor){ 
    if (letra == valor) { 
      printf("Estás en lo correcto \n"); 
-   } 
+  } 
    else { 
      while (letra != valor) { 
        if (letra < valor){  
          printf("El valor es menor, por favor, introduzca uno nuevo \n"); 
          scanf("%d", &valor); 
-         } 
+      } 
        else { 
          printf ("El valor es mayor, por favor, introduzca uno nuevo \n"); 
          scanf("%d", &valor); 
-       } 
-     } 
+      } 
+    } 
       printf ("Ahora está en lo correcto, felicitaciones \n"); 
-   } 
+  } 
 }
